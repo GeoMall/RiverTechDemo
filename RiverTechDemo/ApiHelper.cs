@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RiverTechDemo
 {
     public class ApiHelper
     {
-        public ApiHelper()
-        { }
+        public ApiHelper(){ }
 
         public static HttpClient Client { get; set; }
 
@@ -40,35 +38,9 @@ namespace RiverTechDemo
                     throw new Exception(response.ReasonPhrase);
                 }
             }
-            
         }
 
-        
-        public async Task<UserModel> CallApiUsingPost(string userId)
-        {
-            string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
-            var values = new Dictionary<string, string>
-                          {
-                              { userId, userId },
-                          };
-            var content = new FormUrlEncodedContent(values);
-
-            using (HttpResponseMessage response = await Client.PostAsync(url, content).ConfigureAwait(false))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    var userModel = await response.Content.ReadAsAsync<UserModel>();
-                    return userModel;
-                }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
-            }
-
-        }
-
-        public async Task<HttpResponseMessage> CallApiUsingPost2(string userId)
+        public async Task<HttpResponseMessage> CallApiUsingPost(string userId)
         {
             string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
             var values = new Dictionary<string, string>
@@ -81,7 +53,6 @@ namespace RiverTechDemo
             {
                 return response;               
             }
-
         }
 
         public async Task<HttpResponseMessage> GetApiResponseStatus(int userId)

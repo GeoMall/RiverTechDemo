@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using LightBDD.Framework;
 using LightBDD.Framework.Scenarios;
 using LightBDD.MsTest2;
@@ -16,13 +14,6 @@ namespace TestSuite
     [Label("UiLightBDDTests")]
     public partial class UiLightBDDTests
     {
-
-       // [AssemblyInitialize]
-       // public static void Setup(TestContext testContext) { LightBddScope.Initialize(); }
-       // [AssemblyCleanup]
-      //  public static void Cleanup() { LightBddScope.Cleanup(); }
-
-
         [Scenario]
         [Label("Login")]
         public void SuccessfulLogin() 
@@ -102,6 +93,7 @@ namespace TestSuite
             driver.Close();
         }
 
+      
         //Scenario Login
 
         public void Given_the_user_is_about_to_login()

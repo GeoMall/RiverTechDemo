@@ -1,9 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RiverTechDemo;
-using System;
 using System.Net;
-using System.Threading.Tasks;
+
 
 namespace TestSuite
 {
@@ -26,16 +25,13 @@ namespace TestSuite
                              new UserAddressGeoModel(-37.3159, 81.1496)
                          ),
                         new UserCompanyModel("Romaguera-Crona", "Multi-layered client-server neural-net", "harness real-time e-markets"));
-           
         }
 
         [TestMethod]
         public void TestDataIsCorrect()
         {
             var userModel = helper.CallApiUsingGet("1");
-
             var exp = JsonConvert.SerializeObject(mockModel);
-
             var actual = JsonConvert.SerializeObject(userModel.Result);
             
             Assert.AreEqual(exp, actual);
@@ -48,6 +44,7 @@ namespace TestSuite
             var userModel = helper.CallApiUsingGet("2");
             var exp = JsonConvert.SerializeObject(mockModel);
             var actual = JsonConvert.SerializeObject(userModel.Result);
+
             Assert.AreNotEqual(exp, actual);
         }
 
@@ -68,18 +65,10 @@ namespace TestSuite
         }
 
         [TestMethod]
-        public async Task TestCallApiUsingPostAsync()
+        public void TestCallApiUsingPostAsync()
         {
-            try
-            {
-               await helper.CallApiUsingPost("1");
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Assert.AreEqual(ex.Message, "Not Found");
-            }
-          
+            var response = helper.CallApiUsingPost("1");
+            Assert.AreEqual(HttpStatusCode.NotFound, response.Result.StatusCode);
         }
         
     }

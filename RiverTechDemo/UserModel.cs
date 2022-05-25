@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RiverTechDemo
 {
@@ -38,6 +37,11 @@ namespace RiverTechDemo
                    Phone == model.Phone &&
                    EqualityComparer<UserAddressModel>.Default.Equals(Address, model.Address) &&
                    EqualityComparer<UserCompanyModel>.Default.Equals(Company, model.Company);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id, Name, Username, Email, Website, Phone, Address, Company);
         }
     }
 

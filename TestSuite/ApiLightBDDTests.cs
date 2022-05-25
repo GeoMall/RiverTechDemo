@@ -4,7 +4,6 @@ using LightBDD.MsTest2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RiverTechDemo;
-using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -71,8 +70,6 @@ namespace TestSuite
                 Then_unsuccessful_status_code_should_be_returned
                 );
         }
-
-
     }
 
 
@@ -83,7 +80,6 @@ namespace TestSuite
         UserModel mockModel;
         Task<UserModel> userModel;
         Task<HttpResponseMessage> response;
-        Exception exc;
 
         [TestInitialize]
         public void TestInitialize()
@@ -160,18 +156,7 @@ namespace TestSuite
         //Scenario API Call Using Post HTTP Verb
         public void Given_the_API_is_called_with_Post_http_verb()
         {
-            try
-            {
-                response = helper.CallApiUsingPost2("1");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                //Assert.AreEqual(ex.Message, "Not Found");
-                exc = ex;
-            }
+           response = helper.CallApiUsingPost("1");
         }
-
-
     }
 }
