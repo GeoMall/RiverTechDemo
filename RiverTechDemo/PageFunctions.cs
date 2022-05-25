@@ -1,7 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace RiverTechDemo
 {
@@ -63,10 +62,6 @@ namespace RiverTechDemo
             IWebElement FinishButton = ChromeDriver.FindElement(By.Id("finish"));
             FinishButton.Click();
         }
-
-      
-
-
 
     }
 }
