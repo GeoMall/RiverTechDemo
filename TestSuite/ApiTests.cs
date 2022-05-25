@@ -1,13 +1,11 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using RiverTechDemo;
 using System;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace RiverTechDemoTests
+namespace TestSuite
 {
     [TestClass]
     public class ApiHelperTest
@@ -15,7 +13,7 @@ namespace RiverTechDemoTests
 
         ApiHelper helper;
         UserModel mockModel;
- 
+
 
         [TestInitialize]
         public void TestInitialize()
@@ -70,7 +68,6 @@ namespace RiverTechDemoTests
         }
 
         [TestMethod]
-        //[ExpectedException(typeof(Exception))]
         public async Task TestCallApiUsingPostAsync()
         {
             try

@@ -43,6 +43,7 @@ namespace RiverTechDemo
             
         }
 
+        
         public async Task<UserModel> CallApiUsingPost(string userId)
         {
             string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
@@ -63,6 +64,22 @@ namespace RiverTechDemo
                 {
                     throw new Exception(response.ReasonPhrase);
                 }
+            }
+
+        }
+
+        public async Task<HttpResponseMessage> CallApiUsingPost2(string userId)
+        {
+            string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
+            var values = new Dictionary<string, string>
+                          {
+                              { userId, userId },
+                          };
+            var content = new FormUrlEncodedContent(values);
+
+            using (HttpResponseMessage response = await Client.PostAsync(url, content).ConfigureAwait(false))
+            {
+                return response;               
             }
 
         }

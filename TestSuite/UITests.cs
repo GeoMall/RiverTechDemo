@@ -3,10 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using RiverTechDemo;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
-using System.Text;
+
 
 namespace TestSuite
 {
@@ -60,7 +58,6 @@ namespace TestSuite
         {
             PageFunctions.Login("standard_user", "secret_sauce");
             PageFunctions.AddItemToCart();
-            PageFunctions.OpenCart();
 
             IWebElement cartIcon = driver.FindElement(By.XPath("//*[@id=\"shopping_cart_container\"]/a/span"));
             Assert.IsTrue(cartIcon.Displayed);
