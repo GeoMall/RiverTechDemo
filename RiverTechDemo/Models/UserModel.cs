@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RiverTechDemo.Models;
+using System;
 using System.Collections.Generic;
 
 namespace RiverTechDemo
@@ -45,47 +46,4 @@ namespace RiverTechDemo
         }
     }
 
-    public class UserAddressModel
-    {
-        public UserAddressModel(string street, string suite, string city, string zipCode, UserAddressGeoModel geo)
-        {
-            Street = street;
-            Suite = suite;
-            City = city;
-            ZipCode = zipCode;
-            Geo = geo;
-        }
-
-        public String Street { get; set; }
-        public String Suite { get; set; }
-        public String City { get; set; }
-        public String ZipCode { get; set; }
-        public UserAddressGeoModel Geo { get; set; }
-    }
-
-    public class UserAddressGeoModel
-    {
-        public UserAddressGeoModel(double lat, double lng)
-        {
-            Lat = lat;
-            Lng = lng;
-        }
-
-        public double Lat { get; set; }
-        public double Lng { get; set; }
-    }
-
-    public class UserCompanyModel
-    {
-        public UserCompanyModel(string name, string catchPhrase, string bs)
-        {
-            Name = name;
-            CatchPhrase = catchPhrase;
-            Bs = bs;
-        }
-
-        public String Name { get; set; }
-        public String CatchPhrase { get; set; }
-        public String Bs { get; set; }
-    }
 }

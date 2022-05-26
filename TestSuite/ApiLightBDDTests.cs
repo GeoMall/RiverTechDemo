@@ -4,6 +4,7 @@ using LightBDD.MsTest2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RiverTechDemo;
+using RiverTechDemo.Models;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
