@@ -5,9 +5,11 @@
 
 ### Overview
 
-The solution implemented for this demo contains 2 projects; one called RiverTechDemo and the other called TestSuite. The RiverTechDemo project contains the
-classes calling the API for the API Testing Exercise and classes for controlling the web interface for the UI Automated Testing. The TestSuite project contains
-the test classes to test the API and User interface for *saucedemo.com*.
+The solution implemented for this demo contains 2 projects:
+- RiverTechDemo 
+- TestSuite. 
+
+The RiverTechDemo project contains the classes calling the API for the API Testing Exercise and classes for controlling the web interface for the UI Automated Testing. The TestSuite project contains the test classes to test the API and User interface for *saucedemo.com*.
 
 ![image](https://user-images.githubusercontent.com/23236705/170435839-6fe92178-efe2-4249-9ce0-50e3f1018cad.png)
 
@@ -27,7 +29,7 @@ response from the API and assert that response has the expected values by using 
 CALL: *https://jsonplaceholder.typicode.com/users/1*
 
 ### Solution
-For this exercise, a class called *APIHelper* was created to call the API. An class called *UserModel* was also created to model the response returned by the api call.
+For this exercise, a class called *APIHelper* was created to call the API. A class called *UserModel* was also created to model the response returned by the api call.
 A class *ApiTests* was created to verify the api calls being made. There are total of 5 tests were created:
 
 - TestDataIsCorrect:  
@@ -69,8 +71,7 @@ Scenario:
 - Click finish and verify that order has been dispatched (it is up to you on how to verify this).
 
 ### Solution
-For this exercise, a class called *PageFunctions* was created to perform UI operations on the sauceDemo site. A class *UITests* was created to verify the operations
-done on the site. There are total of 5 tests were created:
+For this exercise, a class called *PageFunctions* was created to perform UI operations on the sauceDemo site. A class *UITests* was also created to verify the operations done on the site. There are total of 5 tests were created:
 
 - TestSuccessfulLogin
 This test was created to assert that the user successfully logged in using the credential "standard_user", "secret_sauce".
