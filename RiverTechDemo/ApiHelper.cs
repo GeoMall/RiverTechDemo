@@ -12,6 +12,10 @@ namespace RiverTechDemo
 
         public static HttpClient Client { get; set; }
 
+        /// <summary>
+        /// Initializing the HTTPClient and setting the default request headers to accept application/jason
+        /// </summary>
+   
         public void InitializeClient()
         {
             Client = new HttpClient();
@@ -22,13 +26,19 @@ namespace RiverTechDemo
             new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+
+        /// <summary>
+        /// Call the API using Get HTTP VERB. If the Status code is successful, the response data is returned.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<UserModel> CallApiUsingGet(string userId)
         {
             string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
            
             using (HttpResponseMessage response = await Client.GetAsync(url))
             {
-                if (response.IsSuccessStatusCode)
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var userModel = await response.Content.ReadAsAsync<UserModel>();
                     return userModel;
@@ -40,6 +50,11 @@ namespace RiverTechDemo
             }
         }
 
+        /// <summary>
+        ///  Call the API using POST HTTP VERB. This call should return an errored response.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> CallApiUsingPost(string userId)
         {
             string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";
@@ -55,6 +70,11 @@ namespace RiverTechDemo
             }
         }
 
+        /// <summary>
+        ///  Call the API using Get HTTP VERB. The full response is being returned.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<HttpResponseMessage> GetApiResponseStatus(int userId)
         {
             string url = $"https://jsonplaceholder.typicode.com/users/{ userId }";

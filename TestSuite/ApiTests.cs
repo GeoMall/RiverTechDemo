@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using RiverTechDemo;
+using RiverTechDemo.Models;
 using System.Net;
 
 
