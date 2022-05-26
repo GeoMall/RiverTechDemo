@@ -16,10 +16,19 @@ The RiverTechDemo project contains the classes calling the API for the API Testi
 ### Test Execution
 
 - Open the solution in Visual Studio
+- Download the chromedriver compatible with your chrome version
+- Place the Chromedriver executable under *.RiverTechDemo\TestSuite\drivers\*
 - Open the Test Explorer window
 
 ![image](https://user-images.githubusercontent.com/23236705/170468228-6df8ae58-fd75-41ec-8482-412a3ba4deea.png)
 - Click on *Run All Tests* button to execute all tests
+
+In the case that the solution could not find the ChromeDriver, perform the below:
+
+- Right click on the Chromdriver executable and open the properties
+- Set Copy to ouput directory as *Copy Always*
+
+ ![image](https://user-images.githubusercontent.com/23236705/170507412-92b62dd0-6c50-4b1e-b77e-cdda52442180.png)
 
 ## API Tests
 
